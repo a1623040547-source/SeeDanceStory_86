@@ -1,0 +1,17 @@
+# phase05 | 段5 | V2V接力 | 15s
+
+【本段情节说明】两人同时捏住那块零食谁也不让，辛恩一本正经说「是我先拿的」，蕾娜耍赖「又没人看见说不清啦」，喜剧感拉满。
+
+【本段素材】上传上一段尾帧 section02_tail_04.png。生成后截取本段视频最后一帧 → section02_tail_05.png 供段 6 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+辛恩（认真）：
+- 0～8s：是我先拿的。【配音词：俺が先に取った。】
+蕾娜（开玩笑）：
+- 9～15s：又没人看见，说不清啦。【配音词：見てないから、決められないよ。】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene; segments 2-12 use previous segment tail frame for V2V. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman same scene warm lighting. Both holding the same snack staring at each other neither letting go, comedic tension. Consistent character. Dialogue: young man says seriously he took it first, young woman teases that nobody saw so it does not count.
+
+========== 负面词（复制到负面词框）==========
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor

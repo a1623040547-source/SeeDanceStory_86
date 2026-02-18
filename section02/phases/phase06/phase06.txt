@@ -1,0 +1,16 @@
+# phase06 | 段6 | V2V接力 | 15s
+
+【本段情节说明】蕾娜突然松手、把整盘零食往自己这边挪，辛恩愣住；蕾娜调侃「那整盘我收下啦」并噗嗤一笑，小得意。
+
+【本段素材】上传上一段尾帧 section02_tail_05.png。生成后截取本段视频最后一帧 → section02_tail_06.png 供段 7 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+蕾娜（调侃地）：
+- 0～7s：那整盘我收下啦。【配音词：じゃ、全部いただきます。】
+- 8～15s：噗嗤一笑。【配音词：クスッと笑う】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene; segments 2-12 use previous segment tail frame for V2V. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman same living room. Young woman lets go and pulls snack plate towards herself, young man surprised expression, playful mood. Consistent character. Dialogue: young woman says teasingly she will take the whole plate then giggles.
+
+========== 负面词（复制到负面词框）==========
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor

@@ -1,0 +1,30 @@
+@b7819167-4d89-4a6a-80a8-9ee7436485e0@50b32bde-25ac-4f4b-9ffc-72cf3a3c2208为角色形象参考
+
+@248bfa3f-aa4b-49c2-97ce-939f7d2b634d为故事环境参考
+
+
+
+# phase01 | 段1 | 图+文生视频 | 15s
+
+【本段情节说明】开场：蕾娜窝在沙发看书、辛恩在另一侧看手机，窗外有雨。蕾娜慵懒地感叹天气不好、今天不出门，奠定室内温馨日常氛围。
+
+【本段素材】段 1 使用首图 section02_ref_img.jpg（辛恩与蕾娜在沙发、客厅、雨窗、暖光，86 画风）。生成后截取视频最后一帧 → section02_tail_01.png 供段 2 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+
+蕾娜（慵懒）：
+
+- 0～4s：轻轻叹气。【配音词：軽くため息】
+
+- 5～10s：天气真不怎么样呢……【配音词：いい天気じゃないね……】
+
+- 11～15s：今天就不出门啦。【配音词：今日は出かけないよ。】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene across all segments; segment 1 uses one reference image (scene+characters); segments 2-12 use previous segment tail frame (last 2-3s) for V2V continuity. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman in cozy indoor living room, young woman reading book on sofa young man on phone, rainy window behind, warm indoor lighting soft shadows, 2D animation detailed face stable camera peaceful atmosphere. Dialogue this segment: young woman sighs softly then speaks in a lazy gentle tone, saying the weather is not nice and that she will not go out today.
+
+========== 负面词（复制到负面词框）==========
+
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor
+

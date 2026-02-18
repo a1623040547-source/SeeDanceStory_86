@@ -1,0 +1,17 @@
+# phase04 | 段4 | V2V接力 | 15s
+
+【本段情节说明】蕾娜放下书伸手拿零食，辛恩也去拿同一块，两人手碰到一起；蕾娜有点不好意思地说「你也盯上这块了啊」，小尴尬与默契并存。
+
+【本段素材】上传上一段尾帧 section02_tail_03.png。生成后截取本段视频最后一帧 → section02_tail_04.png 供段 5 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+蕾娜（略带害羞）：
+- 0～5s：啊……【配音词：あ……】
+- 6～12s：你也盯上这块了啊。【配音词：同じとこ、狙ってた。】
+- 13～15s：轻轻一笑。【配音词：ちょっと笑い】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene; segments 2-12 use previous segment tail frame for V2V. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman same living room. Young woman puts book down and reaches for snack, young man reaches for same piece their hands touch briefly, slight embarrassment. Consistent character. Dialogue: young woman says shyly then you had your eye on this one too then gives a small laugh.
+
+========== 负面词（复制到负面词框）==========
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor

@@ -1,0 +1,16 @@
+# phase03 | 段3 | V2V接力 | 15s
+
+【本段情节说明】辛恩端着茶盘和零食回到沙发、放在茶几上，蕾娜抬头微笑；辛恩递茶并说「你的那份也拿来了」，互动温馨。
+
+【本段素材】上传上一段尾帧 section02_tail_02.png。生成后截取本段视频最后一帧 → section02_tail_03.png 供段 4 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+辛恩（温柔）：
+- 0～7s：来，请用。【配音词：はい、どうぞ。】
+- 8～15s：你的那份也拿来了。【配音词：レナの分も持ってきた。】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene; segments 2-12 use previous segment tail frame for V2V. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman same living room same lighting. Young man brings tea tray and snacks to coffee table places them gently, young woman looks up with small smile. Consistent character warm atmosphere. Dialogue: young man says kindly here you go and your share is here too.
+
+========== 负面词（复制到负面词框）==========
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor

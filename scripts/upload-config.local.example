@@ -1,0 +1,6 @@
+# 复制为 upload-config.local 并填写你的服务器信息（upload-config.local 已被 gitignore）
+# cp upload-config.local.example upload-config.local
+
+SSH_HOST=server
+REMOTE_PATH=/var/www/html/seedance
+HTTP_BASE_URL=https://your-domain.com/seedance

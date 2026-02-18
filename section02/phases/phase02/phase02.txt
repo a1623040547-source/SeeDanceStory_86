@@ -1,0 +1,16 @@
+# phase02 | 段2 | V2V接力 | 15s
+
+【本段情节说明】辛恩起身去泡茶，蕾娜抬眼看他一眼又继续看书；脚步声渐远，为下一段端茶回来做铺垫。
+
+【本段素材】上传上一段尾帧 section02_tail_01.png。生成后截取本段视频最后一帧 → section02_tail_02.png 供段 3 用。
+
+========== 本段剧本台词（配音/TTS 用）==========
+辛恩（沉稳）：
+- 0～6s：我去泡茶。【配音词：お茶、入れるよ。】
+- 7～15s：脚步声渐远。【配音词：足音が遠ざかる】
+
+========== 以下整段复制到 Seedance 2.0 提示词框（含 section 总述与规则，见 @section02/00-项目总述与素材说明.md）==========
+Project: Japanese anime style, consistent with reference image. Characters: young man (calm, low voice), young woman (lively, warm voice). Setting: indoor cozy living room, sofa, coffee table, bookshelf, rainy window, warm lighting. Total 12 segments 15s each. Rules: consistent character and same scene across all segments; segment 1 uses one reference image; segments 2-12 use previous segment tail frame for V2V continuity. Keep anime style consistent, detailed face, stable camera. This segment: young man and young woman same indoor living room rainy window warm lighting. Young man stands up and walks towards kitchen, young woman glances up at him then back to her book. Consistent character seamless continuation. Dialogue: young man says calmly he will make tea then footsteps fade.
+
+========== 负面词（复制到负面词框）==========
+blurry, distorted face, extra limbs, messy style, shaky camera, deformed, poor quality, outdoor
