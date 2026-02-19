@@ -180,7 +180,8 @@ def mode_section_test(project_root: str, section: str) -> None:
         print("Error: no phase videos found (phase01/phase01.mp4, ...)", file=sys.stderr)
         sys.exit(1)
 
-    out_name = f"{section}_merged.mp4"
+    section_basename = os.path.basename(section.rstrip(os.sep))
+    out_name = f"{section_basename}_merged.mp4"
     out_path = os.path.join(section_dir, out_name)
     if run_ffmpeg_concat(project_root, video_paths, out_path):
         print(f"Section-test merged ({len(video_paths)} segments): {out_path}")

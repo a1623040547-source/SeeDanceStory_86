@@ -9,13 +9,14 @@ description: After generating a phase video in Seedance, run rename → tail fra
 
 1. **改名**：将 phase 文件夹内唯一的 `.mp4`（即梦长文件名）重命名为 `phaseNN.mp4`
 2. **尾帧提取**：从该视频截取最后一帧，保存为 `{section}_tail_{N:02d}.png`，供下一段 V2V 使用
-3. **合并测试**：与该 section 的上一段（phase N-1）拼接为 `phase_test_(N-1)_N.mp4`
+3. **均匀截帧**（可选）：从该视频均匀截取 N 帧（默认 6 帧，不含尾帧），保存到 `phaseNN/frames/`（`frame_01.png` … `frame_NN.png`）
+4. **合并测试**：与该 section 的上一段（phase N-1）拼接为 `phase_test_(N-1)_N.mp4`
 
 ## 使用脚本
 
 脚本位置：`.cursor/skills/phase-video-post/scripts/rename_tail_merge.py`
 
-依赖：**ffmpeg**（尾帧与合并）；可选 **opencv-python**（尾帧备用）。
+依赖：**ffmpeg**（尾帧与合并）；**opencv-python**（尾帧备用、均匀截帧）。
 
 ```bash
 # 在项目根目录执行
@@ -24,14 +25,18 @@ python .cursor/skills/phase-video-post/scripts/rename_tail_merge.py --section se
 
 # 仅改名 + 尾帧，不合并（例如 phase01 没有“上一段”或暂不合并）
 python .cursor/skills/phase-video-post/scripts/rename_tail_merge.py --section section03 --phase 1 --no-merge
+
+# story 下 section（用相对路径）
+python .cursor/skills/phase-video-post/scripts/rename_tail_merge.py --section "story/01-海边度假/section01" --phase 1 --no-merge
 ```
 
 | 参数 | 说明 | 默认 |
 |------|------|------|
-| `--section NAME` | section 目录名，如 section02、section03 | 必填 |
+| `--section NAME` | section 目录名或相对路径，如 section03、story/01-海边度假/section01 | 必填 |
 | `--phase N` | 段号 1～12（刚生成视频的那一段） | 必填 |
-| `--project-root PATH` | 项目根目录（其下有 section02、section03 等） | 当前工作目录 |
+| `--project-root PATH` | 项目根目录（其下有 section 或 story 等） | 当前工作目录 |
 | `--no-merge` | 只做改名和尾帧，不执行与上一段合并 | 默认会合并（phase≥2 时） |
+| `--uniform-frames N` | 均匀截取 N 帧（不含尾帧）到 phase/frames/；0 表示不截取 | 6 |
 
 - 改名：只处理 `phases/phaseNN/` 下**唯一**的 `.mp4`；若已是 `phaseNN.mp4` 则跳过。
 - 尾帧：输出到同目录，`{section}_tail_{N:02d}.png`。

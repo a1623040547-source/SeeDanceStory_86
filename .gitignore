@@ -12,6 +12,6 @@
 # 上传脚本本地配置（含服务器路径/域名，勿提交）
 scripts/upload-config.local
 
-section03/section03_merged.mp4
-
-*/phase_test_*.mp4
+# 阶段测试与整段合成视频（本地预览用，不提交）
+**/phase_test_*.mp4
+**/*_merged.mp4

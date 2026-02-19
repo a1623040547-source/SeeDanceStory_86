@@ -26,7 +26,28 @@ python .cursor/skills/extract-video-tail/scripts/extract_tail_frame.py section02
 
 输出文件保存在**视频所在目录**，文件名：`{section}_tail_{segment:02d}.png`。
 
+## 均匀截取多帧（不含尾帧）
+
+脚本：`.cursor/skills/extract-video-tail/scripts/extract_uniform_frames.py`
+
+从视频中均匀截取 N 帧（默认 6 帧，**不含最后一帧**），保存到视频所在目录下的 `frames/` 子目录，命名为 `frame_01.png` … `frame_06.png`。依赖：opencv-python。
+
+```bash
+# 默认 6 帧，输出到 <视频所在目录>/frames/
+python .cursor/skills/extract-video-tail/scripts/extract_uniform_frames.py section02/phases/phase01/phase01.mp4
+
+# 指定帧数与输出目录
+python .cursor/skills/extract-video-tail/scripts/extract_uniform_frames.py phase01.mp4 -n 6 -o phase01/frames
+```
+
+| 参数 | 说明 | 默认 |
+|------|------|------|
+| `video` | 视频路径 | 必填 |
+| `-n` / `--num-frames` | 截取帧数 | 6 |
+| `-o` / `--output-dir` | 输出目录 | 视频所在目录/frames |
+
 ## 与 phase 文件夹的对应关系
 
 - 每段一个文件夹：`phases/phase01/` 内含 `phase01.txt`、`phase01.mp4`。
 - 段 1 生成后运行脚本，尾帧保存为 `phases/phase01/section02_tail_01.png`，供段 2 上传使用。
+- 均匀截帧可归档到同 phase 下的 `frames/` 文件夹（由 phase-video-post 流程一并调用）。

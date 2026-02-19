@@ -44,7 +44,7 @@ def step1_rename(project_root: str, section: str, phase_num: int) -> bool:
 
 
 def step2_tail(project_root: str, section: str, phase_num: int) -> bool:
-    """从 phaseNN.mp4 提取尾帧 -> {section}_tail_NN.png"""
+    """从 phaseNN.mp4 提取尾帧 -> {section}_tail_NN.png（section 为路径时用最后一段作文件名）"""
     video_path = os.path.join(phase_dir(project_root, section, phase_num), f"phase{phase_num:02d}.mp4")
     if not os.path.isfile(video_path):
         print(f"[2] 错误：视频不存在 {video_path}", file=sys.stderr)
@@ -53,6 +53,7 @@ def step2_tail(project_root: str, section: str, phase_num: int) -> bool:
     if not os.path.isfile(script):
         print("[2] 错误：未找到 extract_tail_frame.py", file=sys.stderr)
         return False
+    section_label = os.path.basename(section.rstrip(os.sep))
     r = subprocess.run(
         [
             sys.executable,
@@ -61,14 +62,42 @@ def step2_tail(project_root: str, section: str, phase_num: int) -> bool:
             "--segment",
             str(phase_num),
             "--section",
-            section,
+            section_label,
         ],
         cwd=project_root,
     )
     if r.returncode != 0:
         print("[2] 尾帧提取失败", file=sys.stderr)
         return False
-    print(f"[2] 尾帧已保存: {section}/phases/phase{phase_num:02d}/{section}_tail_{phase_num:02d}.png")
+    print(f"[2] 尾帧已保存: {section}/phases/phase{phase_num:02d}/{section_label}_tail_{phase_num:02d}.png")
+    return True
+
+
+def step2b_uniform_frames(project_root: str, section: str, phase_num: int, num_frames: int = 6) -> bool:
+    """从 phaseNN.mp4 均匀截取 num_frames 帧（不含尾帧），保存到 phase 目录下的 frames/ 子目录"""
+    video_path = os.path.join(phase_dir(project_root, section, phase_num), f"phase{phase_num:02d}.mp4")
+    if not os.path.isfile(video_path):
+        print(f"[2b] 错误：视频不存在 {video_path}", file=sys.stderr)
+        return False
+    script = os.path.join(project_root, ".cursor", "skills", "extract-video-tail", "scripts", "extract_uniform_frames.py")
+    if not os.path.isfile(script):
+        print("[2b] 错误：未找到 extract_uniform_frames.py", file=sys.stderr)
+        return False
+    out_dir = os.path.join(phase_dir(project_root, section, phase_num), "frames")
+    r = subprocess.run(
+        [
+            sys.executable,
+            script,
+            video_path,
+            "--num-frames", str(num_frames),
+            "--output-dir", out_dir,
+        ],
+        cwd=project_root,
+    )
+    if r.returncode != 0:
+        print("[2b] 均匀截帧失败", file=sys.stderr)
+        return False
+    print(f"[2b] 已均匀截取 {num_frames} 帧 -> {section}/phases/phase{phase_num:02d}/frames/")
     return True
 
 
@@ -108,6 +137,7 @@ def main() -> None:
     ap.add_argument("--phase", type=int, required=True, help="段号 1～12（刚生成视频的那一段）")
     ap.add_argument("--project-root", type=str, default=DEFAULT_ROOT, help="项目根目录")
     ap.add_argument("--no-merge", action="store_true", help="只做改名和尾帧，不合并")
+    ap.add_argument("--uniform-frames", type=int, default=6, metavar="N", help="均匀截取 N 帧（不含尾帧）到 phase/frames/，0 表示不截取（默认 6）")
     args = ap.parse_args()
 
     root = os.path.abspath(args.project_root)
@@ -121,6 +151,8 @@ def main() -> None:
     if not step1_rename(root, args.section, args.phase):
         sys.exit(1)
     if not step2_tail(root, args.section, args.phase):
+        sys.exit(1)
+    if args.uniform_frames > 0 and not step2b_uniform_frames(root, args.section, args.phase, num_frames=args.uniform_frames):
         sys.exit(1)
     if not args.no_merge and not step3_merge(root, args.section, args.phase):
         sys.exit(1)
