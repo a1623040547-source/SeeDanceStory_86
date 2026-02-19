@@ -1,0 +1,9 @@
+# Phase01 当前 API 任务（人物形象参考图 section03_character_ref_01.png）
+# 提示词已说明：上传图不是首帧，而是男女主人物形象参考图
+task_id: seed15de97a8e4392c4d1e886f8fc43695d83dpro
+
+# 查进度（可多次执行）
+cd /Users/mac/Downloads/seedance2.0test && python3 .cursor/skills/seedance-api/scripts/generate.py --task-id seed15de97a8e4392c4d1e886f8fc43695d83dpro --project-root .
+
+# 轮询直到完成并打印视频 URL
+cd /Users/mac/Downloads/seedance2.0test && python3 .cursor/skills/seedance-api/scripts/generate.py --task-id seed15de97a8e4392c4d1e886f8fc43695d83dpro --wait --project-root .

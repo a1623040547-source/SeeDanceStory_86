@@ -5,6 +5,8 @@ description: Section/phase 剧本质量复盘与改进要点。基于 section02 
 
 # Section / Phase 剧本复盘与改进要点
 
+**说明**：基于 API 生成连贯视频的 section04 已废案（见 `section04/废案说明.md`）。本 Skill 的复盘与改进要点仍适用于 **section01/02/03** 等在 Seedance 平台手动生成的 section。
+
 基于 section02 中期复盘结论，在**新建 section、撰写或改写 phase 剧本与提示词、或规划 phase 间衔接与镜头过渡**时应用，避免台词平均化、画面呆板与衔接方式单一。
 
 ---
