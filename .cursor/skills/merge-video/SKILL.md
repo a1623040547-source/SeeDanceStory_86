@@ -28,11 +28,12 @@ description: Merge phase videos for testing. Use when you need to concatenate Se
 # 合并 phase01 与 phase02（从项目根执行）
 python .cursor/skills/merge-video/scripts/merge_phase_videos.py --mode phase-test --section section02 --from 1 --to 2
 
-# 合并 phase03 与 phase04
-python .cursor/skills/merge-video/scripts/merge_phase_videos.py --mode phase-test --section section02 --from 3 --to 4
+# 合并 phase02 与 phase03，并在中间插入补差过渡视频（若存在 transition_02_03/transition_02_03.mp4）
+python3 .cursor/skills/merge-video/scripts/merge_phase_videos.py --mode phase-test --section section03 --from 2 --to 3 --with-transition
 ```
 
 - `--from N`、`--to N`：相邻段号，且必须满足 `to = from + 1`（只支持两段相邻）。
+- `--with-transition`：若存在 `phases/transition_<from>_<to>/transition_<from>_<to>.mp4`，则拼接为「前段 + 过渡 + 后段」。详见 skill **phase-transition**。
 - 输出：`<section>/phases/phase_test_<from>_<to>.mp4`。
 
 ### section-test：合并整段所有 phase
@@ -60,6 +61,7 @@ python .cursor/skills/merge-video/scripts/merge_phase_videos.py --mode section-t
 
 ---
 
-## 相关：比例补正（aspect-correct）
+## 相关
 
-若某段与上一段尾帧衔接处有轻微拉伸，可先用 aspect-correct 以上一段尾帧为参考补正该段，再做合并测试。
+- **phase-transition**：相邻两段衔接生硬时，可准备「尾帧+首帧」并生成 1～3 秒过渡视频，再用本脚本 `--with-transition` 插入合成。
+- **比例补正（aspect-correct）**：若某段与上一段尾帧衔接处有轻微拉伸，可先用 aspect-correct 以上一段尾帧为参考补正该段，再做合并测试。

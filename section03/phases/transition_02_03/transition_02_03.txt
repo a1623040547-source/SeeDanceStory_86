@@ -1,0 +1,14 @@
+# Seedance 过渡片段提示词（2 秒）
+
+【用途】phase02 与 phase03 之间的补差过渡，使衔接更平滑。
+
+【素材】
+- 首图（起点）：本文件夹 tail.png（即 phase02 尾帧）
+- 尾图/目标（终点）：本文件夹 first.png（即 phase03 首帧）
+
+【时长】约 2 秒。
+
+【提示词方向】从当前画面自然、连贯地过渡到下一镜画面，保持人物与场景一致，避免跳跃。可强调细微动作或镜头缓动。
+
+生成后将视频命名为 transition_02_03.mp4 放入本文件夹，再使用合并脚本：
+  python3 .cursor/skills/merge-video/scripts/merge_phase_videos.py --mode phase-test --section section03 --from 2 --to 3 --with-transition
