@@ -13,7 +13,7 @@ Seedance API 需要传**图片链接**时，可用以下方式之一得到公网
    ```bash
    IMGBB_API_KEY=你的key
    ```
-3. 运行：
+3. 运行（路径示例；若对归档实验 section 则用 `archive/section02/...`）：
    ```bash
    ./scripts/upload-image-url.sh section02/refs/characters/section02_character_ref_03.jpeg
    ```
@@ -46,7 +46,7 @@ Seedance API 需要传**图片链接**时，可用以下方式之一得到公网
 
 3. 首帧图须为公网 URL，可用 `upload-image-url.sh` 上传后得到。
 
-4. 提交任务（不轮询）：
+4. 提交任务（不轮询；若用归档实验 section 则 prompt-file 为 `archive/section04/...`）：
    ```bash
    python scripts/jimeng_volc_generate.py --prompt-file section04/phases/phase01/phase01.txt --image-url "https://..." --no-poll --project-root .
    ```

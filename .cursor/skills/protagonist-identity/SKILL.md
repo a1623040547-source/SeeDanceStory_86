@@ -28,6 +28,7 @@ description: 辛恩与蕾娜身份文档的入口索引。具体设定与人物/
 
 ---
 
-## 三、与 section 的关系
+## 三、与 section、环境的关系
 
-各 section 的 `00-项目总述与素材说明.md` 中【角色概述】可与身份文档一致，并注明「辛恩详见 @character-shin，蕾娜详见 @character-lena」。各 section 的 `refs/characters/`、`refs/clothes/` 仍为生成时主要路径；角色 skill 内 refs 为档案备份与跨 section 参照。
+- **角色**：各 section 的 `00-项目总述与素材说明.md` 中【角色概述】可与身份文档一致，并注明「辛恩详见 @character-shin，蕾娜详见 @character-lena」。各 section 的 `refs/characters/`、`refs/clothes/` 仍为生成时主要路径；角色 skill 内 refs 为档案备份与跨 section 参照。
+- **环境**：搭建 story 或写 section 的【环境概述】/【场景与氛围】时，可并列查阅 **@.cursor/skills/environment**，从环境档案中选用或改写场景、光线、氛围与用于生成环境图的描述。

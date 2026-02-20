@@ -5,9 +5,7 @@ description: 在本项目中创建新 section 的完整剧本与视频生成流�
 
 # 剧本与视频生成完整流程（项目内 Skill）
 
-**说明**：**基于 API 生成连贯视频**（如 section04）已标记为废案，详见 `section04/废案说明.md`。本 Skill 中「新建 section、剧本、phase、refs、操作流程」等仍适用于在 **Seedance 平台手动逐段生成** 的 section（section01/02/03）。
-
-本 Skill 总结从「构思剧本」到「可逐段复制到 Seedance 2.0 生成」的完整流程与规范，以 section01、section02 为参照。
+**说明**：**基于 API 生成连贯视频**（如 section04）已标记为废案，详见 `archive/section04/废案说明.md`。根目录的 section01～section04 已归档至 `archive/`（实验性质），本 Skill 中「新建 section、剧本、phase、refs、操作流程」等仍适用于在 **Seedance 平台手动逐段生成** 的 section；当前正式 section 以 `story/01-海边度假/section01` 等为准，流程规范可参考 archive 内或 story 内现有 section。
 
 ---
 
