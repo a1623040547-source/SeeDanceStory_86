@@ -19,3 +19,6 @@ scripts/upload-config.local
 # 所有合成/生成的视频（phase 段、过渡、跨 section 合并等，不提交）
 **/phases/**/*.mp4
 **/section*_*_to_section*.mp4
+
+# phase 视频均匀截帧（本地素材用，不提交）
+**/frames/
